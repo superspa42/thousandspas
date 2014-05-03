@@ -1,0 +1,48 @@
+<div style="padding-left: 0px;padding-right: 0px;width: inherit;" class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <p style="padding-top: 20px;" class="editprofile-partial-header">Education</p>
+            <p><span class="editprofile-brief-explanation h8">Information about your educational background is optional.<br> 
+            Fill this section if your educational background is important for your clients.<br>
+            <span style="color: black">This section will not appear if you leave the fields blank.</span></span></p>
+        </div>
+        <div class="col-md-8">
+            
+            <form style="padding-top: 15px;" role="form">
+                <div class="row">                  
+                  <div class="col-xs-9 form-group">
+                    <input popover-title="Educational Background" popover-placement="right" popover-append-to-body='true' popover="Use comma to enter multiple educations. e.g. CA, ICAI" popover-trigger="mouseenter"  type="text" class="form-control" placeholder="Educational background." ng-model="accountant.education">
+                  </div>
+                </div>
+                
+                <div class="row">                  
+                  <div class="col-xs-9 form-group">
+                    <input popover-title="Certifications" popover-placement="right" popover-append-to-body='true' popover="Enter multiple certifications using comma." popover-trigger="mouseenter"  type="text" class="form-control" placeholder="Certifications." ng-model="accountant.certifications">
+                  </div>
+                </div>                  
+                 
+                <div class="row">
+                    <div class="col-xs-5 form-group">                    
+                       <a ng-click="saveFormDataAndNextView('/address')" href="" class="btn-default btn-block btn">
+                          <i class="glyphicon glyphicon-ok"></i>&nbsp;&nbsp;
+                          Save &amp; Next
+                       </a>
+                    </div>
+                    <div class="col-xs-4 form-group">                    
+                       <a ng-click="saveFormData()" href="" class="btn-secondary btn-block btn">Save</a>                     
+                    </div>
+                 </div> 
+                 
+                 <div class="row">
+                    <div id="successMessageDiv" style="display:{{successMessageDivVisibility}};" class="alert alert-success col-xs-9">
+                         {{successMessageDivSuccessMessage}}
+                    </div>
+                    <div id="errorMessageDiv" style="display:{{errorMessageDivVisibility}};" class="alert alert-danger col-xs-9">
+                         {{errorMessageDivSuccessMessage}}
+                    </div> 
+                 </div>    
+                 
+            </form>
+        </div>
+    </div> 
+</div>

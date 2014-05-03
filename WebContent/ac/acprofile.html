@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html ng-app="AccountantConnect">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../img/main_icon.png">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>  
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    
+    <!-- <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>  
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'> -->
+    
+    
+    <title> Create free profile for accountants - AccountantConnect </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="../css/b-main.css" rel="stylesheet">
+    <link href="../css/ac-icon-font.css" rel="stylesheet">
+    
+    <!-- ========= Load JS ======== -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.js"></script>
+    <script src="../js/ac-signup.js"></script>
+    <script src="../js/ac-util.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    
+    
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+
+      <script>
+
+        $(document).ready(function() {  
+    //Add custom tracking. Remove them after GA tracking is enabled 
+    setTrackingDetailsInCookieIfNotAlreadySet();
+    feature = getParameterByNameFromURL("feature");
+    if(feature == null || feature == ""){
+     trackUserActivity("visit_acmainhtml");
+ }else{
+     trackUserActivity(feature);
+ }
+
+ $("#landingpageJoinAccountantConnectButton").click(function() {
+     trackUserActivity("clickButton_joinNetworkLandingPageButton_acmainhtml")
+     $("#accountant_email").focus();      
+ });
+ $("#accountant_email").focus(function(){
+    $("#infoEmailTextMsg").show();
+});
+ $("#accountant_name").focus(function(){
+    $("#infoNameTextMsg").show();
+});
+ $("#accountant_email").blur(function(){
+    $("#infoEmailTextMsg").hide();
+});
+ $("#accountant_name").blur(function(){
+    $("#infoNameTextMsg").hide();
+});
+
+    // ============ Click of Register >> button ==========
+    $("#accountantRegistrationButton").click(function() {
+
+        trackUserActivity("clickButton_registerAccountant_acmainhtml");
+        if(!validateFieldsOnSignUpForm()){
+         return false;
+     }
+
+     $("#accountantRegistrationButton").addClass("disabled");
+
+        //$("#pleaseWaitButton").show();
+        accountantName = $("#accountant_name").val();
+        accountantEmail = $("#accountant_email").val();
+        $.post("../api/accountant/createAccountantWithMinParams",
+        {
+            accountant_name:accountantName,
+            accountant_email:accountantEmail 
+        },
+        function(data, status) {
+            if(status == "success" && data.success == true){
+                $("#accountantAdditionSuccessDiv").show();
+                $("#accountantAdditionErrorDiv").hide();
+            }else{
+                $("#accountantAdditionSuccessDiv").hide();
+                $("#accountantAdditionErrorDiv").show();
+            }
+            $("#accountantRegistrationButton").removeClass("disabled");;
+        });
+    });
+    // ============ END: Click of Register >> button ==========
+});
+</script>
+
+<script>
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48262166-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48262166-1', 'accountantconnect.in');
+  ga('send', 'pageview');
+</script>
+</head>
+<body class="body">
+
+    <div class="navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <br>
+          <a onclick="trackUserActivity('clickLogo_acFaqPageLogo_acfaqhtml')" class="brand " href="acmain.html">
+            <img src="../img/branding_white_background.png" alt="AccountantConnect">
+          </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right"> 
+               <li>
+                   <a href="acfeedback.html" class="navbar-links">Get Listed</a>  
+               </li>
+               <li class="hidden">
+                  <a href="acfeedback.html" class="navbar-links">Feedback</a>  
+               </li>            
+               <li>
+                 <a href="#" class="navbar-links" onclick="$('#accountchooser-tooltip').show();trackUserActivity('clickLink_contactUs_acfaqhtml')"> Contact Us</a>                 
+                  
+                 <div id="accountchooser-tooltip" class="jfk-tooltip accountchooser-tooltip" style="display:none;" onblur="$('#accountchooser-tooltip').hide()">
+                 <div onclick="$('#accountchooser-tooltip').hide();" class="pull-right"><a href="#">X</a></div>
+                 <div id="content" class="jfk-tooltip-content">  
+                     <i class='glyphicon glyphicon-envelope' ></i> <span>contact@accountantconnect.in</span><br>
+                     <i class='glyphicon glyphicon-earphone'></i> <span>+91 80 3076 7297</span>
+                 </div>                    
+                </div>
+               </li>               
+            </ul>
+
+          <!--form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form> -->
+        </div><!--/.navbar-collapse -->
+       </div>
+      </div>
+    </div>
+
+    <!-- ========================== Main Body ========================== -->
+    <div style="margin-top:120px" class="profile-container container">
+
+    <!-- ===================== START: Profile Header Div Row ============= -->
+       <div style="border-bottom: 1px solid #DCDCDC;padding-bottom:10px;"  id="profile-header" class="row">
+              <div class="container">
+                 <div class="row">
+                    <div class="col-md-6">
+                        <div style="padding:20px;">                 
+                           <div style="border-bottom:1px solid #e2e2e2;color: #504D4D;" class="h4">Manas Kumar Panda</div>
+                            <div style="color:#4D4E50" class="h6">CA, Tax Consultant</div>
+                            <div style="padding:20px;color:#3F4046;" class="h7">
+                              Manas is one of the best tax consultants around. There are many consultants in Bangalore. But he is very different. <a href="#">more &raquo; </a>                        
+                            </div>
+                        </div>
+                    </div>
+                    <div id="profile-header-photo" class="col-md-3">
+                       <div class="pofile-header-photo">
+                            <img class="general-clip-image" src="../img/IMG_0184.JPG">
+                       </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                       <span style="color:#07863E" class="h4 icon-location"></span>&nbsp;&nbsp;<span style="color:#000;font-family:Montserrat" class="h7">Marathahalli Road</span>
+                        &nbsp;&nbsp;
+                        <span style="color:#07863E" class="h4 icon-phone"></span>&nbsp;&nbsp;<span style="color:#000;font-family:Montserrat" class="h7">+91 988 675 3455</span>    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-sm btn-default btn">Ask a query</button>                   
+                    </div>
+                </div> 
+           </div>
+       </div>
+       <!-- ===================== END: Profile Header Div Row ============= -->
+
+
+
+       <!-- ================= START: Contact Div Row ================= -->
+       <div id="profile_contact" style="border-bottom: 1px solid #DCDCDC;padding-bottom:10px;" class="row">
+           <div class="col-md-4">
+               <div style="padding-top:20px;">
+                    <span style="color:#07863E" class="h4 icon-location"></span>
+                    <span style="font-weight: bold" class="h7">Manas Panda Consulting,</span><br>
+                    <span class="h8">#02-D16, Saranya Business district,MG Road Business District,Bangalore, Karnataka-560100</span><br>
+                    <span><a href="">View Map</a></span>
+
+                </div>
+           </div>
+           <div class="col-md-4">
+               <div style="padding-top:20px;">
+                    <i style="color:#07863E" class='glyphicon glyphicon-envelope' ></i>&nbsp;&nbsp;<span class="h8">manas.k.panda@gmail.com</span><br>
+                    <i style="color:#07863E" class='glyphicon glyphicon-globe' ></i>&nbsp;&nbsp;<span class="h8">www.manaspanda.in</span>
+                </div>
+           </div>
+           <div class="col-md-4">
+               <div style="padding-top:20px;">
+                    <span class="h6"><i style="color:#07863E" class='glyphicon glyphicon-phone' ></i></span>&nbsp;&nbsp;<span class="h8">+91 988 670 7787</span><br>
+                    <span style="color:#07863E" class="h6 icon-phone"></span>&nbsp;&nbsp;<span class="h8">080 2345 5235 </span>
+                </div>
+           </div>
+       </div>
+       <!-- ================= END: Contact Div Row ================= -->
+
+    </div>
+
+</body>
+</html>

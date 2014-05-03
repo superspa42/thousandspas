@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Mini Ajax File Upload Form</title>
+
+
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../img/main_icon.png">
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,600,700' rel='stylesheet' type='text/css'>   
+    <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'> 
+
+    <!--
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>  
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'> -->
+    
+    
+    <title> Create free profile for accountants - AccountantConnect </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="../css/b-main.css" rel="stylesheet">
+    <link href="../css/signin.css" rel="stylesheet">
+    <link href="../css/ac-icon-font.css" rel="stylesheet">
+    <link href="../css/ac-profile.css" rel="stylesheet">
+    <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+    <link rel="stylesheet" href="../css/jquery.fileupload-ui.css">
+
+
+
+
+
+    <!-- ========= Load JS ======== -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.js"></script>
+    <script src="../js/ac-signup.js"></script>
+    <script src="../js/ac-util.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="../js/angular.1.0.7min.js"></script>
+    <script src="../js/AccountantProfileSection.js"></script>
+    <script src="../js/ui-bootstrap-tpls-0.5.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js"></script>
+
+    
+    
+        <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+        <script src="../js/vendor/jquery.ui.widget.js"></script>
+       <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+        <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>
+        <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+        <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+        <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+        <script src="../js/jquery.iframe-transport.js"></script>
+        <!-- The basic File Upload plugin -->
+        <script src="../js/jquery.fileupload.js"></script>
+        <!-- The File Upload file processing plugin -->
+        <script src="../js/jquery.fileupload-fp.js"></script>
+        <!-- The File Upload user interface plugin -->
+        <script src="../js/jquery.fileupload-ui.js"></script>
+        <!-- The main application script -->
+        <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
+        <!--[if gte IE 8]><script src="js/cors/jquery.xdr-transport.js"></script><![endif]-->
+                <script src="../js/delete.js"></script>
+        
+
+
+<script>
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48262166-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48262166-1', 'accountantconnect.in');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+	<body>
+
+	
+
+            <form  id="upload1" style="padding-top: 15px;" role="form" method="post" action="../imgupload" enctype="multipart/form-data">
+		<button id="file-input-button" class="btn-default btn-block btn fileinput-button">
+                         <i class="glyphicon glyphicon-picture"></i>&nbsp;&nbsp;        
+                             <span>Add Photo</span>
+                         <input id="fileupload" type="file" name="uploadctl">
+                      </button>
+
+		  </form>
+		<!-- JavaScript Includes -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  -->
+		<!--<script src="assets/js/jquery.knob.js"></script> -->
+
+		<!-- jQuery File Upload Dependencies -->
+		<!-- <script src="../js/vendor/jquery.ui.widget.js"></script>
+		<script src="../js/jquery.iframe-transport.js"></script>
+		<script src="../js/jquery.fileupload.js"></script> -->
+		
+		<!-- Our main JS file -->
+
+	</body>
+</html>

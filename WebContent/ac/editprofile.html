@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html ng-app="AccountantProfileSection">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../img/main_icon.png">
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,600,700' rel='stylesheet' type='text/css'>   
+    <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <!--
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>  
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'> -->
+    
+    
+    <title> Create free profile for accountants - AccountantConnect </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="../css/b-main.css" rel="stylesheet">
+    <link href="../css/signin.css" rel="stylesheet">
+    <link href="../css/ac-icon-font.css" rel="stylesheet">
+    <link href="../css/ac-profile.css" rel="stylesheet">
+    <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+    <link rel="stylesheet" href="../css/jquery.fileupload-ui.css">
+ 
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+
+
+         <!-- ========= Load JS ======== -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="../js/angular-route.min.js"></script>
+    <!-- <script src="../js/ui-bootstrap-tpls-0.5.0.min.js"></script>  -->
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js"></script>
+    <script src="../js/AccountantProfileSection.js"></script>
+    <script src="../js/ac-util.js"></script>
+    <script src="../js/ac-signup.js"></script>
+    
+    
+        <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+        <script src="../js/vendor/jquery.ui.widget.js"></script>
+       <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+        <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>
+        <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+        <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+        <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+        <script src="../js/jquery.iframe-transport.js"></script>
+        <!-- The basic File Upload plugin -->
+        <script src="../js/jquery.fileupload.js"></script>
+        <!-- The File Upload file processing plugin -->
+        <script src="../js/jquery.fileupload-fp.js"></script>
+        <!-- The File Upload user interface plugin -->
+        <script src="../js/jquery.fileupload-ui.js"></script>
+        <!-- The main application script -->
+        <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
+        <!--[if gte IE 8]><script src="js/cors/jquery.xdr-transport.js"></script><![endif]-->
+
+
+<script>
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48262166-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48262166-1', 'accountantconnect.in');
+  ga('send', 'pageview');
+</script>
+</head>
+<body class="body" ng-controller="AccountantController">
+      <div class="navbar-inverse" role="navigation">
+      <div class="container">
+        <div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <br>
+          <a onclick="trackUserActivity('clickLogo_acFaqPageLogo_acfaqhtml')" class="brand " href="acmain.html">
+            <img src="../img/small_branding_white_bg.png" alt="AccountantConnect">
+          </a>
+        </div>
+        <div class="navbar-collapse collapse" ng-controller="SignUpController">
+            <ul class="nav navbar-nav navbar-right"> 
+               <li class="hidden">
+                  <a href="acfeedback.html" class="navbar-links">Feedback</a>  
+               </li>            
+               <li>
+                 <a href="#" class="navbar-links" onclick="$('#accountchooser-tooltip').show();trackUserActivity('clickLink_contactUs_acfaqhtml')"> Contact Us</a>                 
+                  
+                 <div id="accountchooser-tooltip" class="jfk-tooltip accountchooser-tooltip" style="display:none;" onblur="$('#accountchooser-tooltip').hide()">
+                 <div onclick="$('#accountchooser-tooltip').hide();" class="pull-right"><a href="#">X</a></div>
+                 <div id="content" class="jfk-tooltip-content">  
+                     <i class='glyphicon glyphicon-envelope' ></i> <span>contact@accountantconnect.in</span><br>
+                     <i class='glyphicon glyphicon-earphone'></i> <span>+91 80 3076 7297</span>
+                 </div>                    
+                </div>
+               </li>   
+               <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		              <i style="font-size: 16px;" class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;{{accountant.firstName}}<b class="caret"></b>
+		          </a>
+		          <ul class="dropdown-menu">		          
+                    <li>
+                     <a href="sampleprofile.html" target="_blank"> <i class='glyphicon glyphicon-eye-open' ></i> &nbsp;&nbsp;Preview Profile</a>                   
+                    </li>
+                    <li>
+                      
+                    </li>
+		            <li>
+		              <a href="" ng-click="logout()"><i class="glyphicon glyphicon-off"></i>&nbsp;&nbsp;&nbsp;Logout</a>
+		            </li>
+		          </ul>
+               </li>            
+            </ul>
+
+          <!--form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form> -->
+        </div><!--/.navbar-collapse -->
+       </div>
+      </div>
+    </div>
+    <div style="padding-left: 0px;margin-left: 0px;margin-top: 0px;" class="">
+
+        <!-- START: Top Bar -->
+        <div class="subnav row">
+          <div class="col-md-3">
+          </div>
+          <div class="col-md-6">
+            <div class="subnav-text"> 7 short steps to your great profile!</div>
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="pull-right col-md-2">
+            <div style="border-left: 1px solid #1d1d1d;border-right: 1px solid #1d1d1d;" class="subnav-text">
+              <span class="{{accountant.PreviewLinkHidden}}">    
+                <a class="general-bar-links" href="profile.html" target="_blank">
+                    <i class='glyphicon glyphicon-eye-open' ></i> &nbsp;&nbsp;&nbsp;Preview&nbsp;&nbsp;&nbsp;
+                    <i class='glyphicon glyphicon-share-alt' ></i>
+                </a>
+              </span>
+              <span class="{{accountant.SampleLinkHidden}}">    
+                <a class="general-bar-links" href="" ng-click="openDisplaySampleProfileModal()">
+                    <i class='glyphicon glyphicon-eye-open' ></i> &nbsp;&nbsp;&nbsp;Preview&nbsp;&nbsp;&nbsp;
+                    <i class='glyphicon glyphicon-share-alt' ></i>
+                </a>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+
+        </div>
+        <!-- END: Top bar -->
+
+        <!-- ================== START: Main body content ================= -->
+        <div style="height: 750px;" class="row">
+            <!-- ============= START: Left panel ============= -->
+            <div style="padding-right: 0px;height: 100%;width: 270px;" class="col-md-3">
+              <div>
+                <ul class="nav nav-pills nav-stacked">  
+                  <br>
+                  <li class="nav-header">Introduction</li>
+                  <li ng-repeat="editProfileLeftNav_intro in editProfileLeftNavs_intro" class="{{editProfileLeftNav_intro.class}}" ng-click="editProfileLeftNavs_introClicked($event, $index)">
+                    <a href="#{{editProfileLeftNav_intro.link}}">
+                        <i class='glyphicon {{editProfileLeftNav_intro.glyphicon}}' ></i>&nbsp;&nbsp;&nbsp;&nbsp;{{editProfileLeftNav_intro.LinkText}}
+                        &nbsp;&nbsp;&nbsp;&nbsp;<i class='profile-page-icon-{{editProfileLeftNav_intro.itemIconColor}} pull-right glyphicon {{editProfileLeftNav_intro.IsItemFilled}}' ></i>
+                    </a>
+                  </li>
+                  <br><br>
+
+                  <li class="nav-header">Professional Information</li>
+                  
+                  <li ng-repeat="editProfileLeftNav_prof in editProfileLeftNavs_prof" class="{{editProfileLeftNav_prof.class}}" ng-click="editProfileLeftNavs_profClicked($event, $index)">
+                    <a href="#{{editProfileLeftNav_prof.link}}">
+                        <i class='glyphicon {{editProfileLeftNav_prof.glyphicon}}' ></i>&nbsp;&nbsp;&nbsp;&nbsp;{{editProfileLeftNav_prof.LinkText}}
+                        &nbsp;&nbsp;&nbsp;&nbsp;<i class='profile-page-icon-{{editProfileLeftNav_prof.itemIconColor}} pull-right glyphicon {{editProfileLeftNav_prof.IsItemFilled}}' ></i>
+                    </a>
+                  </li>
+
+
+                  <li>
+                    <div style="padding: 20px;padding-top: 150px;" class="h8">
+                      Information on these <strong class="profile-page-icon-red">7 steps</strong> are very important for the business owners, who wish to contact you.
+                    </div> 
+                  </li>                                         
+                 </ul>
+               </div> 
+            </div>
+            <!-- ============= END: Left panel ============= -->
+
+            <!-- ================= START: Main Form Div ========== -->
+            <div style="padding-top: 50px;padding-left: 50px;background-color: #fff;height: 100%;" class="col-md-6">
+                <div ng-view></div>
+            </div>
+
+            <!-- ================= END: Main Form Div ========== -->
+            
+            <!-- ================= START: RightMost Div =========== -->
+            <div style="padding-left: 50px;padding-top: 80px;" class="col-md-3">
+              <div style="" id="value_prop" style="padding-top:50px;"> 
+                <div style="padding-top: 20px;"> 
+                  <div class="">
+                    <span style="color:#075A6E;" class="h1 icon-icon_profile1"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="h8">A beautiful profile can help you get more clients. Its <strong>FREE!</strong></span>              
+                  </div>     
+                              
+                  <div style="padding-top: 20px;" class="">
+                    <span style="color:#075A6E;" class="h1 icon-find_accountant_landing"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="h8">Business owners, who are looking for accountants can find you easily!</span>
+                  </div>    
+
+                  <div style="padding-top: 20px;" class="">
+                    <span style="color:#075A6E;" class="h1 icon-bubbles"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="h8">Post great articles and answer queries to build better trust in the community.</span> 
+                  </div>
+                </div>             
+              </div>
+          </div>
+            <!-- ================= END: RightMost Div =========== -->            
+            
+        </div>
+        <!-- ================== END: Main body content ================= -->
+        
+        <footer>
+      </footer>
+    </div>
+
+</body>
+</html>

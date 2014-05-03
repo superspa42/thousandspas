@@ -1,0 +1,81 @@
+<div style="padding-left: 0px;padding-right: 0px;width: inherit;" class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <p style="padding-top: 20px;" class="editprofile-partial-header">Basic Info</p>
+            <p><span class="editprofile-brief-explanation h8">This section captures your introductory information.</span></p>
+        </div>
+        <div class="col-md-8">
+		    
+		    <form style="padding-top: 15px;" role="form">
+		         <div class="row">
+		            <div class="col-xs-9 form-group">
+		                <input type="text" class="form-control" placeholder="First Name" ng-model="accountant.firstName">		                
+		            </div>
+		         </div>
+		         
+		         <div class="row">
+                    <div class="col-xs-9 form-group">
+                        <input type="text" class="form-control" placeholder="Last Name" ng-model="accountant.lastName">
+                    </div>
+                 </div>
+		         
+		         <div class="row">
+		            <div class="col-xs-9 form-group">
+		               <input type="text" class="form-control" placeholder="Email" ng-model="accountant.email" readonly>
+		            </div>
+		            <div class="help-block">You can change Your email.</div>
+		         </div>
+		
+		         <div class="row">
+		             <div class="col-xs-9 form-group">
+		                 <input popover-title="Mobile Number" popover-placement="right" popover-append-to-body='true' popover="This is mandatory as we may send you alerts on this number. This won't be visible to the businesses" popover-trigger="mouseenter" type="text" class="form-control" placeholder="Mobile" ng-model="accountant.mobile">
+		             </div>
+		             <div class="help-block">Businesses will contact you on this number.</div>                
+		         </div> 
+		         
+		         <div class="row">
+                    <div class="col-xs-9 form-group">
+                        <input popover-title="Business Phone" popover-placement="right" popover-append-to-body='true' popover="Prospective clients might contact you on this number. Can be same as mobile number." popover-trigger="mouseenter" type="text" class="form-control" placeholder="Business Phone" ng-model="accountant.businessPhone">
+                    </div>
+                    <div class="help-block">Start typing to find.</div>
+                 </div>
+		         
+		         <div class="row">
+                    <div class="col-xs-9 form-group">
+                        <input  popover-placement="right" popover-append-to-body='true' popover="Start typing to see suggestions. If your city not found, please choose others" popover-trigger="mouseenter" type="text" class="form-control" placeholder="City" ng-model="accountant.city" typeahead="city for city in cities | filter:$viewValue | limitTo:8">
+                    </div>
+                    <div class="help-block">Start typing to find.</div>
+                 </div>  
+		         
+		         <div class="row">
+		             <div class="col-xs-9 form-group">
+		                 <input popover-title="Your area in the city" popover-placement="right" popover-append-to-body='true' popover="e.g. Electronic city, Bangalore. This will help the businesses, who are looking for accountants near their location." popover-trigger="mouseenter" type="text" class="form-control" placeholder="Area" ng-model="accountant.area">
+		             </div>
+		             <div class="help-block">e.g. Electronic City</div>
+		         </div>	         
+		                      
+		         <div class="row">
+		            <div class="col-xs-5 form-group">                    
+		               <a ng-click="saveFormDataAndNextView('/photo')" href="" class="btn-default btn-block btn">
+		                  <i class="glyphicon glyphicon-ok"></i>&nbsp;&nbsp;
+		                  Save &amp; Next
+		               </a>
+		            </div>
+		            <div class="col-xs-4 form-group">                    
+                       <a ng-click="saveFormData()" href="" class="btn-secondary btn-block btn">Save</a>                     
+                    </div>
+		         </div> 
+		         
+		         <div class="row">
+	                <div id="successMessageDiv" style="display:{{successMessageDivVisibility}};" class="alert alert-success col-xs-9">
+	                     {{successMessageDivSuccessMessage}}
+	                </div>
+	                <div id="errorMessageDiv" style="display:{{errorMessageDivVisibility}};" class="alert alert-danger col-xs-9">
+	                     {{errorMessageDivSuccessMessage}}
+	                </div> 
+                 </div>                         		         
+		         
+		    </form>
+	    </div>
+    </div> 
+</div>

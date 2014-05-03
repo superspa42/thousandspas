@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html ng-app="SignUp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../img/main_icon.png">
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,600,700' rel='stylesheet' type='text/css'>   
+    <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'> 
+
+    <!--
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>  
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'> -->
+    
+    
+    <title> Create free profile for accountants - AccountantConnect </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="../css/b-main.css" rel="stylesheet">
+    <link href="../css/signin.css" rel="stylesheet">
+    <link href="../css/ac-icon-font.css" rel="stylesheet">
+    
+    <!-- ========= Load JS ======== -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="../js/angular.1.0.7min.js"></script>
+    <script src="../js/ui-bootstrap-tpls-0.5.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js"></script>
+    <script src="../js/ac-signup.js"></script>
+    <script src="../js/ac-util.js"></script>
+    
+    
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+<script>
+
+
+
+</script>
+
+<script>
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48262166-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48262166-1', 'accountantconnect.in');
+  ga('send', 'pageview');
+</script>
+</head>
+<body class="body">
+
+ <div class="navbar-inverse" role="navigation">
+      <div class="container">
+        <div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <br>
+          <a onclick="trackUserActivity('clickLogo_acFaqPageLogo_acfaqhtml')" class="brand " href="acmain.html">
+            <img src="../img/small_branding_white_bg.png" alt="AccountantConnect">
+          </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right"> 
+               <li class="hidden">
+                  <a href="acfeedback.html" class="navbar-links">Feedback</a>  
+               </li>            
+               <li>
+                 <a href="#" class="navbar-links" onclick="$('#accountchooser-tooltip').show();trackUserActivity('clickLink_contactUs_acfaqhtml')"> Contact Us</a>                 
+                  
+                 <div id="accountchooser-tooltip" class="jfk-tooltip accountchooser-tooltip" style="display:none;" onblur="$('#accountchooser-tooltip').hide()">
+                 <div onclick="$('#accountchooser-tooltip').hide();" class="pull-right"><a href="#">X</a></div>
+                 <div id="content" class="jfk-tooltip-content">  
+                     <i class='glyphicon glyphicon-envelope' ></i> <span>contact@accountantconnect.in</span><br>
+                     <i class='glyphicon glyphicon-earphone'></i> <span>+91 80 3076 7297</span>
+                 </div>                    
+                </div>
+               </li>               
+            </ul>
+
+          <!--form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form> -->
+        </div><!--/.navbar-collapse -->
+       </div>
+      </div>
+    </div>
+
+    <div class="container" ng-controller="SignUpController">
+    
+        <div class="row">
+           <div class="col-md-12">
+                <form style="padding-top: 100px" class="form-signin" role="form">
+                    <div class="form-signin-heading HelveticaNeue-h2-bold">Login</div>
+                    <input id="email" type="email" class="form-control" placeholder="Email address" ng-model="accountantEmail" required>
+                    <input id="password" type="password" class="form-control" placeholder="Password" ng-model="accountantPassword" autofocus required>
+                    <a class="btn-lg btn-default btn btn-block" type="submit" ng-click="login()">Login &raquo;</a>              
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

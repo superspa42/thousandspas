@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../img/main_icon.png">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+          
+  <title>AccountantConnect - How we can help accountants grow</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="../css/ac-main.css" rel="stylesheet">
+    <link href="../css/ac-icon-font.css" rel="stylesheet">
+    
+    <!-- =========== Load JS ========== -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="../js/ac-util.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.js"></script>
+        
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script>
+    //Add custom tracking. Remove them after GA tracking is enabled 
+    setTrackingDetailsInCookieIfNotAlreadySet();
+    feature = getParameterByNameFromURL("feature");
+    if(feature == null || feature == ""){
+      trackUserActivity("visit_acfaqhtml"); 
+    }else{
+       trackUserActivity(feature);
+    }
+    
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48262166-1']);
+    _gaq.push(['_trackPageview']);
+    
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    	  ga('create', 'UA-48262166-1', 'accountantconnect.in');
+    	  ga('send', 'pageview');
+    </script>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <br>
+          <a onclick="trackUserActivity('clickLogo_acFaqPageLogo_acfaqhtml')" class="brand " href="acmain.html">
+            <img src="../img/branding.png" alt="AccountantConnect">
+          </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="navbar-links nav navbar-nav navbar-right"> 
+               <li class="hidden">
+                  <a href="acfeedback.html" class="navbar-links">Feedback</a>  
+               </li>            
+               <li>
+                 <a href="#" class="navbar-links" onclick="$('#accountchooser-tooltip').show();trackUserActivity('clickLink_contactUs_acfaqhtml')"> Contact Us</a>                 
+                  
+                 <div id="accountchooser-tooltip" class="jfk-tooltip accountchooser-tooltip" style="display:none;" onblur="$('#accountchooser-tooltip').hide()">
+                 <div onclick="$('#accountchooser-tooltip').hide();" class="pull-right"><a href="#">X</a></div>
+                 <div id="content" class="jfk-tooltip-content">  
+                     <i class='glyphicon glyphicon-envelope' ></i> <span>contact@accountantconnect.in</span><br>
+                     <i class='glyphicon glyphicon-earphone'></i> <span>+91 80 3076 7297</span>
+                 </div>                    
+                </div>
+               </li>
+                
+            </ul>
+
+          <!--form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form> -->
+        </div><!--/.navbar-collapse -->
+       </div>
+      </div>
+    </div>
+    
+    <div style="height: 250px;background-color: #f2f7fa;border-bottom: 1px #d9dee1 solid;" class="jumbotron">
+       <div class="container" style="text-align:center"> 
+          <div class="row">                             
+            <div style="padding: 80px;color:#2a6999;" class="col-md-1"><span style="font-size: 80px;color: #759AB9" class="pull-left icon-help"></span></div>
+            <div style="padding-top: 100px;color:#2a6999;padding-left: 40px;text-align: left;" class="col-md-10 h2"> WHAT IS ACCOUNTANTCONNECT?</div>
+          </div>
+       </div>
+    </div>
+
+    <div style="height: 1500px;" class="faq-container container">
+               
+         <!-- START: FAQ TextBlock Row -->
+         <div style="height: 400px;" class="radial-gradient row">
+            <div class="faq-textblocks col-md-6">
+               <div style="color: #0D167E;padding-bottom: 10px;" class="faq-textblocks-header">AccountantConnect is a modern community of accountants</div>
+               <div class="h5">In this community, <span style="color:#434446;font-weight: 700;">the business owners can easily find the right accountant &amp; 
+               right accounting advice</span> for their business.<br><br> 
+               <span style="color:#434446;font-weight: 700;">Also, this will benefit the accountants hugely</span>, by giving them access to more clients.</div><br><br>
+               <div style="padding-top: 16px;" class="pull-left"><span class="h4"><span style="color: #8F0C0C" class="h5">Here is how it will work for the </span><span style="background-color: #8F0C0C" class="label label-primary">accountants</span></span></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <i style="font-size: 50px;color: #000;" class="glyphicon glyphicon-arrow-right"></i>
+            </div>   
+         
+            <div class="col-md-4">
+                <!-- <div class="general-medium-clip-image-div"><img class="general-clip-image" src="../img/collaboration.png"></img></div> -->
+                <span style="font-size:170px;" class="accountant_faq_page-imageblock pull-right icon-collaboration_acFaq"></span>   
+            </div>           
+        </div>
+         <!-- END: FAQ TextBlock Row -->
+         
+         
+         <!-- START: FAQ TextBlock Row -->
+         <div style="height: 250px;" class="radial-gradient row">
+           <div class="col-md-4">
+               <span style="font-size:130px;" class="accountant_faq_page-imageblock pull-right icon-create_profile_landing"></span>       
+           </div>
+           <div class="pull-right faq-textblocks col-md-6">
+               <div style="padding-bottom: 10px;color: #50bf82;" class="faq-textblocks-header">Step 1. Create your profile</div>
+               <div class="h5">Start by creating your profile on AccountantConnect platform.<br> You can <span style="color:#434446;font-weight: 700;">highlight your area of expertize, upload your photograph, share your customer testimonials</span> and a lot more.  </div>
+           </div>
+        </div>
+         <!-- END: FAQ TextBlock Row -->
+         
+        
+        <!-- START: FAQ TextBlock Row -->        
+        <div style="height: 250px;" class="radial-gradient row">
+           <div class="faq-textblocks  col-md-6">
+               <div style="padding-bottom: 10px;color: #348eda;" class="faq-textblocks-header">Step 2. We will help businesses find you.</div>
+               <div class="h5">Business owners reach our site when they are in need of Accounant or accounting advice. <span style="color:#434446;font-weight: 700;">They can find you directly by searching you on our portal</span>. You 
+              can also share articles and help the businesses with their queries. This will get you better visibility.</div>      
+           </div>
+           <div class="col-md-4">
+              <span class="accountant_faq_page-imageblock pull-right icon-find_accountant_acFaq"></span>
+           </div>
+        </div>
+         <!-- END: FAQ TextBlock Row -->
+
+         <!-- START: FAQ TextBlock Row -->
+         <div style="height: 250px;" class="radial-gradient row">
+           <div class="col-md-4">
+               <span class="accountant_faq_page-imageblock pull-right icon-share_articles_acFaq"></span>    
+           </div>
+           <div class="pull-right faq-textblocks col-md-6">
+               <div style="padding-bottom: 10px;color: #50bf82;" class="faq-textblocks-header">Step 3. Post informative articles &amp; answer queries.</div>
+               <div class="h5">Post useful <span style="color:#434446;font-weight: 700;">articles around accounting and help businesses with their accounting related queries</span>. This will give 
+               you better visibility among the businesses on our platform.</div>
+           </div>
+        </div>
+         <!-- END: FAQ TextBlock Row -->
+         
+        <!-- START: FAQ TextBlock Row -->        
+        <div style="height: 250px;" class="radial-gradient row">
+           <div class="faq-textblocks  col-md-6">
+               <div style="padding-bottom: 10px;color: #348eda;" class="faq-textblocks-header">That can help you grow your practice!</div>
+               <div class="h5">Our vision is to help accountants grow their practice while helping businesses with their critical accounting needs.</div>      
+           </div>
+           <div class="col-md-4">
+              <span style="font-size:100px;" class="accountant_faq_page-imageblock pull-right icon-growth_acFaq"></span>
+           </div>
+        </div>
+         <!-- END: FAQ TextBlock Row -->
+        
+
+        <div style="height: 100px;text-align:center" class="row">
+          <a onclick="trackUserActivity('clickButton_joinAccountantNetwork_acfaq')" href="acmain.html#accountant_email" id="acFaqPageJoinAccountantConnectButton" class="btn-lg btn-primary btn" role="button">Join the community now! &raquo;</a>
+        </div>
+
+
+    </div> <!-- /container -->
+   
+      <footer>
+        <p></p>
+      </footer>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+     </body>
+</html>

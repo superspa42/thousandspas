@@ -1,0 +1,69 @@
+<div style="padding-left: 0px;padding-right: 0px;width: inherit;" class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <p style="padding-top: 20px;" class="editprofile-partial-header">Experience</p>
+            <p><span class="editprofile-brief-explanation h8">Highlight your experience &amp; areas of expertise.<br>
+            Large number of selections creates confusion.<br><br>
+            So please highlight a <span style="color: black">few and the most important ones</span>.</span></p>
+        </div>
+        <div class="col-md-8">
+            
+            <form style="padding-top: 15px;" role="form">
+                <div class="row">   
+                  <div class="editprofile-form-label col-xs-6">Years of Experience</div>                              
+                  <div class="col-xs-3 form-group">
+                    <input popover-placement="right" popover-append-to-body='true' popover="Round it to the next number. e.g If your exp. is 2 yr 3 months, enter 3." popover-trigger="mouseenter"  type="text" class="input-sm form-control"  ng-model="accountant.yearOfExp">
+                  </div>
+                </div>
+                
+                <div style="margin-bottom: 20px;" class="row"></div>                                       
+                
+               <div class="row">
+                   <div class="col-xs-9">
+                        <span class="editprofile-form-label">Areas of Expertise</span>
+                   </div>
+                </div>      
+               
+                <div ng-repeat="expertise in expertises" class="row">
+                   <div class="col-xs-9 form-group">
+                      <input type="text" id="{{expertise.id}}" placeholder="Your Expertise" class="input-sm form-control" ng-model="expertise.value">
+                   </div>
+                </div> 
+                                                            
+                
+                <div class="row">
+                  <div class="col-xs-9">
+                    <a ng-click="addNewExpertise()" href="" style="text-decoration: none">
+                        <i style="color: green" class="glyphicon glyphicon-plus"></i> 
+                        <span style="color: green" class="HelveticaNeue-h10-bold">ADD ANOTHER EXPERTISE</span>
+                    </a>
+                  </div>
+                </div> 
+                
+                <div style="margin-bottom: 20px;" class="row"></div>                       
+                 
+                <div class="row">
+                    <div class="col-xs-5 form-group">                    
+                       <a ng-click="saveFormDataAndNextView('/education')" href="" class="btn-default btn-block btn">
+                          <i class="glyphicon glyphicon-ok"></i>&nbsp;&nbsp;
+                          Save &amp; Next
+                       </a>
+                    </div>
+                    <div class="col-xs-4 form-group">                    
+                       <a ng-click="saveFormData()" href="" class="btn-secondary btn-block btn">Save</a>                     
+                    </div>
+                 </div> 
+                 
+                 <div class="row">
+                    <div id="successMessageDiv" style="display:{{successMessageDivVisibility}};" class="alert alert-success col-xs-9">
+                         {{successMessageDivSuccessMessage}}
+                    </div>
+                    <div id="errorMessageDiv" style="display:{{errorMessageDivVisibility}};" class="alert alert-danger col-xs-9">
+                         {{errorMessageDivSuccessMessage}}
+                    </div> 
+                 </div>    
+                 
+            </form>
+        </div>
+    </div> 
+</div>

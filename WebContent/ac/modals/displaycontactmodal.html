@@ -1,0 +1,22 @@
+ <!-- To display FTU dialog -->
+
+    <div ng-controller="AccountantController">
+        <div class="modal-header">
+            <span class="h3" style="text-align: center;">Contact for {{accountant.firstName}}</span>
+        </div>
+        <div style="padding-left: 60px;padding-bottom: 0px;" class="modal-body">
+            <div class="h8" style="font-size: 28px;padding-bottom: 20px;">
+                <i class="glyphicon glyphicon-earphone"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-size: 22px;color: #948E8E">{{accountant.businessPhone}}</span>
+            </div>
+            <div class="h8" style="font-size: 28px;">
+                <i class="glyphicon glyphicon-envelope"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-size: 22px;color: #948E8E">{{accountant.email}}</span>
+            </div>
+            
+        </div>
+        <div style="padding-top: 0px;margin-top: 0px;" class="modal-footer">
+            <a class="btn-default btn" ng-click="ok()">Done</a>
+        </div>
+
+    </div>

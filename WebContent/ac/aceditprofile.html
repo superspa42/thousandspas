@@ -1,0 +1,278 @@
+<html>
+<head>
+<link href="../css/bootstrap.css" rel="stylesheet">
+<link
+	href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+	rel="stylesheet">
+<link href="../css/ac-main.css" rel="stylesheet">
+<link href="../css/ac-icon-font.css" rel="stylesheet">
+<link href="../css/practo.css" rel="stylesheet">
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="../img/main_icon.png">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,600,700"
+	rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css">
+<!--<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'> -->
+<!-- <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600,700' rel='stylesheet' type='text/css'> -->
+
+<link
+	href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700"
+	rel="stylesheet" type="text/css">
+
+
+
+
+<title>Accountant Profile</title>
+<script>$("#accountantRegistrationButton").click(function() {
+	 
+    
+    	var accountantEmail = $("#accountant_email").val();
+    	var accountantMobile= $("#accountant_mobile").val();
+    	var accountantAddress=$("accountant_address").val();
+    	var accountantName=$("accountnat_name").val();
+    	if(!accountantMobile)
+    		$("#infoMobileTextMsg").show();
+    	
+    	if(!accountantAddress)
+    		$("#infoAddressMsg").show();
+    	
+    	if(!accountantName)
+    		$("#infoNameMsg").show();
+    		
+    	var atpos=accountantEmail.indexOf("@");
+    	var dotpos=accountantEmail.lastIndexOf(".");
+
+    	    if(atpos<1 || dotpos<atpos+2 || dotpos+2>=accountantEmail.length){
+    		$("#infoEmailTextMsg").hide();
+    		$("#accountantEmailInvalidFormat").show();
+    		$("#accountant_email").focus();
+    		return false;
+    	}
+
+    	else {
+    		$("#accountantEmailInvalidFormat").hide();
+    		return true;
+    	}
+
+    }
+    	   return false;
+    }</script>
+
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div>
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<br> <a class="brand " href="acmain.html"> <img
+						src="../img/branding.png" alt="AccountantConnect">
+					</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-links nav navbar-nav navbar-right">
+						<li><a href="acfeedback.html" class="navbar-links">Feedback</a>
+
+						</li>
+						<li><a class="navbar-links"
+							onmouseover="document.getElementById('accountchooser-tooltip').style.display = 'block';">Contact
+								Us</a>
+							<div id="accountchooser-tooltip"
+								class="jfk-tooltip accountchooser-tooltip"
+								style="display: block;">
+								<div id="content" class="jfk-tooltip-content">
+									<i class="glyphicon glyphicon-log-in"></i>
+									kulkarni.karthik@gmail.com<br> <i
+										class="glyphicon glyphicon-earphone"></i> 9902417369<br>
+								</div>
+								<div class="jfk-tooltip-closebtn"
+									onmouseover="document.getElementById('accountchooser-tooltip').style.display ='none';"
+									id="accountchooser-tooltip-closebtn" aria-label="Close"
+									role="button" tabindex="0"></div>
+								<div class="jfk-tooltip-arrow jfk-tooltip-arrowleft">
+									<div class="jfk-tooltip-arrowimplbefore"></div>
+									<div class="jfk-tooltip-arrowimplafter"></div>
+								</div>
+							</div></li>
+
+					</ul>
+
+
+
+					<div class="signup-container">
+
+						<div class="signup-rightpane">
+
+							<div class="signup-head">
+
+
+								<h1>Get Listed</h1>
+								<p>
+									<br>
+									<br>
+								</p>
+
+							</div>
+							<div class="signup-whybox">
+
+								<div class="signup-feature">
+									<!--  <img src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-ash3/t39.2365/851558_160351450817973_1678868765_n.png"></img>
+									<p class="strong feature-head">GET Connected with more clients!</p>-->
+
+								</div>
+							</div>
+							<div class="signup-whybox">
+								<div class="signup-feature">
+									<!--  <img src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-ash3/t39.2365/851558_160351450817973_1678868765_n.png"></img>
+									<p class="strong feature-head">GET Connected with more clients!</p>-->
+
+								</div>
+
+							</div>
+
+							<div class="signup-whybox">
+								<div class="signup-feature">
+									<img
+										src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-ash3/t39.2365/851558_160351450817973_1678868765_n.png">
+									<p class="strong feature-head">GET Connected with more
+										clients!</p>
+
+								</div>
+
+							</div>
+
+							<div class="signup-whybox">
+								<div class="signup-feature">
+									<br> <br> <br>
+
+								</div>
+								<div class="signup-feature last">
+									<img
+										src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-ash3/t39.2365/851558_160351450817973_1678868765_n.png">
+									<p class="strong feature-head">Be the Number 1 Accountant</p>
+								</div>
+
+							</div>
+
+
+							<div class="signup-whybox">
+								<div class="signup-feature">
+									<img
+										src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-ash3/t39.2365/851558_160351450817973_1678868765_n.png">
+									<p class="strong feature-head">Write articles about nuances
+										of accounting</p>
+
+								</div>
+
+							</div>
+
+						</div>
+
+
+
+
+
+						<div class="signup-leftpane">
+
+							<div class="signup-form">
+								<form id="doctorSignupStepTwo" method="POST"
+									action="/health/get-listed">
+
+									<div
+										style="color: #18A8B4; padding-bottom: 10px; text-align: center"
+										class="faq-textblocks-header">Register Now!</div>
+
+
+
+
+									<input type="hidden" name="step" value="2"> <input
+										type="hidden" name="id" value="254482">
+
+
+									<div class="floating-placeholder">
+										<input placeholder="Name" class="text-field" type="text"
+											value="" style="width: 280px;" name="name">
+									</div>
+									<div class="errorMessages"
+										style="margin-top: 0px; margin-bottom: 10px;">Name is a
+										required field.</div>
+
+									<div class="floating-placeholder">
+										<input placeholder="Mobile(10-Digit)" class="text-field"
+											type="text" value="" style="width: 280px;" name="name">
+									</div>
+									<div class="errorMessages"
+										style="margin-top: 0px; margin-bottom: 10px;">Invalid
+										Mobile</div>
+
+									<div class="floating-placeholder">
+										<input placeholder="Email" class="text-field" type="text"
+											value="" style="width: 280px;" name="clinic_name">
+									</div>
+									<div class="errorMessages"
+										style="margin-top: 0px; margin-bottom: 10px;">Invalid
+										Email</div>
+
+									<div class="floating-placeholder">
+										<input placeholder="Company Name" class="text-field"
+											type="text" value="" style="width: 280px;" name="clinic_name">
+									</div>
+
+
+									<div style="margin-bottom: 10px;">
+										<div style="margin-bottom: 10px;">
+
+
+											<div class="floating-placeholder"
+												style="width: 280px; height: 80px;">
+												<textarea placeholder="Company Address" class="text-field"
+													style="width: 258px; height: 60px;" name="street_address"></textarea>
+
+											</div>
+
+											<select class="floating-placeholder">
+												<option value="">City</option>
+												<option value="BLR">Bangalore</option>
+												<option value="AHD">Ahmedabad</option>
+												<option value="CHN">Chennai</option>
+												<option value="DEL">Delhi</option>
+											</select> <br> <select class="floating-placeholder">
+												<option value="">Speciality</option>
+												<option value="ACC">Accounting</option>
+												<option value="SMB">Small Business</option>
+												<option value="AUD">Auditing</option>
+												<option value="OTH">Others</option>
+											</select>
+
+
+											<div>
+												<input class="button" type="submit" value="Get Listed"
+													style="margin: 20px 0; width: 280px;">
+											</div>
+
+										</div>
+										<div class="clear"></div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

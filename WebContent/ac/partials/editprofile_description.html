@@ -1,0 +1,46 @@
+<div style="padding-left: 0px;padding-right: 0px;width: inherit;" class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <p style="padding-top: 20px;" class="editprofile-partial-header">Short Description</p>
+            <p><span class="editprofile-brief-explanation h8">Provide a short description of your experience.</span></p>
+        </div>
+        <div class="col-md-8">
+            
+            <form style="padding-top: 15px;" role="form">
+                <div class="row">
+                  <div class="col-xs-9 form-group">
+                    <input  popover-placement="right" popover-title="Short Professional Description" popover-append-to-body='true' popover="e.g. Indirect Tax consultant with 5 years experience.&nbsp;Be as brief as possible" popover-trigger="mouseenter" type="text" class="form-control" placeholder="Short Professional description." ng-model="accountant.shortDescription">
+                  </div>
+                </div>  
+                
+                <div class="row">
+                  <div class="col-xs-9 form-group">
+                    <textarea popover-placement="right" popover-title="Long professional description" popover-append-to-body='true' popover="e.g. Suresh has 5+ years of experience in advising clients on Indian Tax compliance. He is a practising CA and has contributed.." popover-trigger="mouseenter" style="width:100%" class="form-control" rows="4" placeholder="Long description. Please keep it within 60 words." ng-model="accountant.longDescription"></textarea>
+                  </div>
+                </div>            
+                 
+                <div class="row">
+                    <div class="col-xs-5 form-group">                    
+                       <a ng-click="saveFormDataAndNextView('/social')" href="" class="btn-default btn-block btn">
+                          <i class="glyphicon glyphicon-ok"></i>&nbsp;&nbsp;
+                          Save &amp; Next
+                       </a>
+                    </div>
+                    <div class="col-xs-4 form-group">                    
+                       <a ng-click="saveFormData()" href="" class="btn-secondary btn-block btn">Save</a>                     
+                    </div>
+                 </div> 
+                 
+                 <div class="row">
+                    <div id="successMessageDiv" style="display:{{successMessageDivVisibility}};" class="alert alert-success col-xs-9">
+                         {{successMessageDivSuccessMessage}}
+                    </div>
+                    <div id="errorMessageDiv" style="display:{{errorMessageDivVisibility}};" class="alert alert-danger col-xs-9">
+                         {{errorMessageDivSuccessMessage}}
+                    </div> 
+                 </div>                   
+                 
+            </form>
+        </div>
+    </div> 
+</div>
