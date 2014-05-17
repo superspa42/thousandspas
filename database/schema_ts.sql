@@ -13,7 +13,7 @@ CREATE TABLE spa (
   password varchar(80) ,
   city varchar(80) ,
   area varchar(100) ,
-  spashortname varchar(200), /* Will create URL like www.superspas.in/aromaspa or better yet aromaspa.superspas.in */
+  spashostname varchar(200), /* Will create URL like www.superspas.in/aromaspa or better yet aromaspa.superspas.in */
   
   
   ownerfirstname varchar(50),
@@ -40,7 +40,10 @@ CREATE TABLE spa (
   country varchar(100),
   
   noofvisittoeditprofilepage int,
-  noofuniqueprofilevisits int
+  noofuniqueprofilevisits int,
+  
+  locationlat FLOAT(10,6),
+  locationlong FLOAT(10,6)
   
   PRIMARY KEY (spaid)
 ) AUTO_INCREMENT=1120 
