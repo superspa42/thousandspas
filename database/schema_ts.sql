@@ -7,11 +7,11 @@ CREATE TABLE spa (
     spaid int NOT NULL AUTO_INCREMENT,
     spaname varchar(200),
     primaryemail varchar(80) NOT NULL UNIQUE,
-    secondaryemail varchar(80) NOT NULL,
+    secondaryemail varchar(80), 
     businessphone1 varchar(20),
     businessphone2 varchar(20),
-    password varchar(80) ,
-    city varchar(80) ,
+    password varchar(80),
+    city varchar(80),
     area varchar(100) ,
     spashostname varchar(200), /* Will create URL like www.superspas.in/aromaspa or better yet aromaspa.superspas.in */
 
