@@ -22,6 +22,8 @@ CREATE TABLE spa (
 
     joindate date ,
 
+    isprofilecreated int ,
+
     profilecreatedate date ,
     profilemodifieddate date,
     isHidden int ,
@@ -45,7 +47,8 @@ CREATE TABLE spa (
     locationlat FLOAT(10,6),
     locationlong FLOAT(10,6),
 
-    isprofilecreated int ,
+    isprofilecomplete int,
+
 
     PRIMARY KEY (spaid)
 ) AUTO_INCREMENT=1120 ;
