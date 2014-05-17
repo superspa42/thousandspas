@@ -68,7 +68,7 @@ private SessionFactory sessionFactory;
 	public Object doesTheEmailExist(String email) throws CommonException{
 		Session session = sessionFactory.getCurrentSession();
 		Criteria criteria = session.createCriteria(Spa.class);
-			criteria.add(Restrictions.eq("email", email));
+			criteria.add(Restrictions.eq("primaryemail", email));
 		try{
 			return criteria.uniqueResult();
 		}catch (HibernateException e) {

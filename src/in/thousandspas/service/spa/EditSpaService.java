@@ -64,9 +64,9 @@ public class EditSpaService {
 		
 		Spa spa = new Spa();
 		
-		spa.setFirstName(firstName);
-		spa.setLastName(lastName);
-		spa.setEmail(email);
+		spa.setOwnerFirstName(firstName);
+		spa.setOwnerLastName(lastName);
+		spa.setPrimaryEmail(email);
 		spa.setMobile(phone);
 		spa.setJoindate(new java.sql.Date(new java.util.Date().getTime()));
 		spa.setIsProfileCreated(0);
@@ -149,32 +149,28 @@ public class EditSpaService {
 		}
 		
 		//If the spa is retrieved successfully
-		spa.setFirstName(firstName);
-		spa.setLastName(lastName);
-		spa.setEmail(email);
+		spa.setOwnerFirstName(firstName);
+		spa.setOwnerLastName(lastName);
+		spa.setPrimaryEmail(email);
 		
 		spa.setMobile(mobile);
 		spa.setIsProfileCreated(1);
 		spa.setIsHidden(0);
 		
-		spa.setBusinessPhone(businessPhone);
+		spa.setBusinessPhone1(businessPhone);
+		spa.setBusinessPhone2(businessPhone);
 		spa.setCity(city);
-		spa.setAge(age);
+		
 		spa.setArea(area);
 				
 		spa.setShortDescription(shortDescription);
 		spa.setLongDescription(longDescription);
 		
 		spa.setWebsiteURL(websiteURL);
-		spa.setLinkedinProfile(linkedinProfile);
+		
 		spa.setFbProfile(fbProfile);
 		spa.setGplusProfile(gplusProfile);
 		
-		spa.setYearOfExp(yearOfExp);
-		spa.setAreasOfExpertise(areasOfExpertise);
-		
-		spa.setEducation(education);
-		spa.setCertifications(certifications);
 		
 		spa.setAddressLine1(addressLine1);
 		spa.setAddressLine2(addressLine2);
@@ -246,7 +242,7 @@ public class EditSpaService {
 		} catch (CommonException e) {
 			e.printStackTrace();
 		}
-    	spa.setPhotoFileName(photoURL);
+    //	spa.setPhotoFileName(photoURL);
 		
 		try {
 			spaDao.update(spa);
@@ -271,7 +267,7 @@ public class EditSpaService {
 			spa	= (Spa)spaDao.readById(id);
 			if(spa != null){
 				appResponse.setCode(EventStatus.success.getValue());
-				appResponse.setData(spa.getPhotoFileName());
+		//		appResponse.setData(spa.getPhotoFileName());
 			}
 		} catch (CommonException e) {
 			e.printStackTrace();

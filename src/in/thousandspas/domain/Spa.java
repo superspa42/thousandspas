@@ -19,86 +19,135 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Spa {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	
+	 /* Table spa:
+	  spaid int NOT NULL AUTO_INCREMENT,
+	  spaname varchar(200),
+	  primaryemail varchar(80) NOT NULL UNIQUE,
+	  secondaryemail varchar(80) NOT NULL,
+	  businessphone1 varchar(20),
+	  businessphone2 varchar(20),
+	  password varchar(80) ,
+	  city varchar(80) ,
+	  area varchar(100) ,
+	  spashostname varchar(200), //Will create URL like www.superspas.in/aromaspa or better yet aromaspa.superspas.in 
+	  
+	  
+	  ownerfirstname varchar(50),
+	  ownerlastname varchar(50) ,
+	  mobile varchar(20) ,
+	
+	  joindate date ,
+	  isprofilecreated int ,
+	  profilecreatedate date ,
+	  profilemodifieddate date,
+	  isHidden int ,
+	  
+	  shortdescription text,
+	  longdescription text,
+	  
+	  websiteurl text,
+	  fbprofile text,
+	  gplusprofile text,
+	      
+	  addressline1 varchar(200),
+	  addressline2 varchar(200),
+	  state varchar(100),
+	  pincode int,
+	  country varchar(100),
+	  
+	  noofvisittoeditprofilepage int,
+	  noofuniqueprofilevisits int,
+	  
+	  locationlat FLOAT(10,6),
+	  locationlong FLOAT(10,6),
+	  
+	  isprofilecomplete int
+	  */
 	@Column
 	private Integer spaid;
 	
 	@Column
-	private String email;
+	private String spaname;
 	
 	@Column
-	private String firstName;
+	private String primaryemail;
 	
-	@Column 
-	private String lastName;
+
+	@Column
+	private String 	secondaryemail;
+	
+	
+	@Column
+	private String businessphone1;
+	
+	@Column
+	private String businessphone2;
 	
 	@Column
 	private String password;
-		
-	@Column
-	private Date joindate;
-	
-	@Column
-	private Integer isProfileCreated;
-	
-	@Column
-	private Date profileCreateDate;
-	
-	@Column
-	private Integer isHidden;
-	
-	@Column
-	private String mobile;
-	
-	@Column
-	private String businessPhone;
 	
 	@Column
 	private String city;
-		
-	@Column
-	private Integer age;
+	
 	
 	@Column
 	private String area;
 	
 	@Column
-	private String photoFileName;
+	private String spashostname;
 	
 	@Column
-	private String shortDescription;
+	private String ownerfirstname;
 	
 	@Column 
-	private String longDescription;
-	
-	@Column
-	private String websiteURL;
-	
-	@Column
-	private String linkedinProfile;
-	
-	@Column
-	private String fbProfile;
+	private String ownerlastname;
 	
 	@Column 
-	private String gplusProfile;
+	private String mobile;
+		
+	@Column
+	private Date joindate;
 	
 	@Column
-	private Integer yearOfExp;
+	private Integer isprofilecreated;
 	
 	@Column
-	private String areasOfExpertise;
+	private Date profilecreatedate;
+	
 	
 	@Column
-	private String education;
+	private Date profilemodifieddate;
+	
+	
+	@Column
+	private Integer isHidden;
+	
+	
+	@Column
+	private String shortdescription;
+	
+
+	@Column
+	private String longdescription;
+	
+	
+		
+	@Column
+	private String websiteurl;
+	
+	@Column
+	private String fbprofile;
+	
+	@Column
+	private String gplusprofile;
 	
 	@Column 
-	private String certifications;
+	private String addressline1;
 	
 	@Column
-	private String addressLine1;
+	private String addressline2;
 	
-	@Column
-	private String addressLine2;
 	
 	@Column
 	private String state;
@@ -107,20 +156,80 @@ public class Spa {
 	private Integer pincode;
 	
 	@Column
-	private String country;	
+	private String country;
+
 	
-	@Transient
-	private ProfileCompletionStatus profileCompletionStatus;
 	
 	@Column
-	private Integer noOfVisitToEditProfilepage;
+	private Integer noofvisittoeditprofilepage;
 	
+	@Column 
+	private Integer noofuniqueprofilevisits;
+	
+	@Column
+	private float locationlat;
+	
+	@Column
+	private float locationlong;
+
+    @Column 
+    private Integer isprofilecomplete;
+	
+	
+    @Transient
+	private ProfileCompletionStatus profileCompletionStatus;
+
+    
 	public Integer getSpaid() {
 		return spaid;
 	}
 
 	public void setSpaid(Integer spaid) {
 		this.spaid = spaid;
+	}
+
+
+	public String getSpaName() {
+		return spaname;
+	}
+
+	public void setSpaName(String spaname) {
+		this.spaname = spaname;
+	}
+
+	public String getPrimaryEmail() {
+		return primaryemail;
+	}
+
+	public void setPrimaryEmail(String spaEmail) {
+		this.primaryemail = spaEmail;
+	}
+
+
+	public String getSecondaryEmail() {
+		return secondaryemail;
+	}
+
+	public void setSecondaryEmail(String spaEmail) {
+		this.secondaryemail = spaEmail;
+	}
+
+
+
+	public String getBusinessPhone1() {
+		return businessphone1;
+	}
+
+	public void setBusinessPhone1(String phone) {
+		this.businessphone1 = phone;
+	}
+
+	public String getBusinessPhone2() {
+		return businessphone2;
+	}
+
+	public void setBusinessPhone2(String phone) {
+		this.businessphone2 = phone;
 	}
 
 	public String getPassword() {
@@ -139,38 +248,39 @@ public class Spa {
 		this.city = city;
 	}
 
-	public Date getJoindate() {
-		return joindate;
+	public String getArea() {
+		return area;
 	}
 
-	public void setJoindate(Date joindate) {
-		this.joindate = joindate;
+	public void setArea(String area) {
+		this.area = area;
 	}
 
-	public Integer getIsProfileCreated() {
-		return isProfileCreated;
+	public String getSpaHostName() {
+		return spashostname;
 	}
 
-	public void setIsProfileCreated(Integer profileCreated) {
-		this.isProfileCreated = profileCreated;
+	public void setSpaHostName(String spashostname) {
+		this.spashostname = spashostname;
 	}
 
-	public Date getProfileCreateDate() {
-		return profileCreateDate;
+
+	public String getOwnerFirstName() {
+		return ownerfirstname;
 	}
 
-	public void setProfileCreateDate(Date profileCreationDate) {
-		this.profileCreateDate = profileCreationDate;
+	public void setOwnerFirstName(String ownerfirstname) {
+		this.ownerfirstname = ownerfirstname;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getOwnerLastName() {
+		return ownerlastname;
 	}
 
-	public void setEmail(String spaEmail) {
-		this.email = spaEmail;
+	public void setOwnerLastName(String owernlastname) {
+		this.ownerlastname = ownerlastname;
 	}
-
+	
 	public String getMobile() {
 		return mobile;
 	}
@@ -179,28 +289,37 @@ public class Spa {
 		this.mobile = mobile;
 	}
 
-	public Integer getAge() {
-		return age;
+
+	public Date getJoindate() {
+		return joindate;
 	}
 
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setJoindate(Date joindate) {
+		this.joindate = joindate;
 	}
 
-	public String getFirstName() {
-		return firstName;
+    public Integer getIsProfileCreated() {
+        return isprofilecreated;
+    }
+
+    public void setIsProfileCreated(Integer isprofilecreated) {
+        this.isprofilecreated = isprofilecreated;
+    }
+
+	public Date getProfileCreateDate() {
+		return profilecreatedate;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setProfileCreateDate(Date profileCreationDate) {
+		this.profilecreatedate = profileCreationDate;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public Date getProfileModifiedDate() {
+		return profilemodifieddate;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setProfileModifiedDate(Date profilemodifieddate) {
+		this.profilemodifieddate = profilemodifieddate;
 	}
 
 	public Integer getIsHidden() {
@@ -211,116 +330,61 @@ public class Spa {
 		this.isHidden = isHidden;
 	}
 
-	public String getBusinessPhone() {
-		return businessPhone;
-	}
-
-	public void setBusinessPhone(String businessPhone) {
-		this.businessPhone = businessPhone;
-	}
-
-	public String getArea() {
-		return area;
-	}
-
-	public void setArea(String area) {
-		this.area = area;
-	}
-
-	public String getPhotoFileName() {
-		return photoFileName;
-	}
-
-	public void setPhotoFileName(String photoFileName) {
-		this.photoFileName = photoFileName;
-	}
 
 	public String getShortDescription() {
-		return shortDescription;
+		return shortdescription;
 	}
 
-	public void setShortDescription(String shortDescription) {
-		this.shortDescription = shortDescription;
+	public void setShortDescription(String shortdescription) {
+		this.shortdescription = shortdescription;
 	}
 
 	public String getLongDescription() {
-		return longDescription;
+		return longdescription;
 	}
 
-	public void setLongDescription(String longDescription) {
-		this.longDescription = longDescription;
+	public void setLongDescription(String longdescription) {
+		this.longdescription = longdescription;
 	}
 
-	public String getLinkedinProfile() {
-		return linkedinProfile;
+	public String getWebsiteURL() {
+		return websiteurl;
 	}
 
-	public void setLinkedinProfile(String linkedinProfile) {
-		this.linkedinProfile = linkedinProfile;
-	}
+	public void setWebsiteURL(String websiteurl) {
+		this.websiteurl = websiteurl;
+	}	
 
 	public String getFbProfile() {
-		return fbProfile;
+		return fbprofile;
 	}
 
-	public void setFbProfile(String fbProfile) {
-		this.fbProfile = fbProfile;
+	public void setFbProfile(String fbprofile) {
+		this.fbprofile = fbprofile;
 	}
 
 	public String getGplusProfile() {
-		return gplusProfile;
+		return gplusprofile;
 	}
 
-	public void setGplusProfile(String gplusProfile) {
-		this.gplusProfile = gplusProfile;
-	}
-
-	public Integer getYearOfExp() {
-		return yearOfExp;
-	}
-
-	public void setYearOfExp(Integer yearOfExp) {
-		this.yearOfExp = yearOfExp;
-	}
-
-	public String getAreasOfExpertise() {
-		return areasOfExpertise;
-	}
-
-	public void setAreasOfExpertise(String areasOfExpertise) {
-		this.areasOfExpertise = areasOfExpertise;
-	}
-
-	public String getEducation() {
-		return education;
-	}
-
-	public void setEducation(String education) {
-		this.education = education;
-	}
-
-	public String getCertifications() {
-		return certifications;
-	}
-
-	public void setCertifications(String certifications) {
-		this.certifications = certifications;
+	public void setGplusProfile(String gplusprofile) {
+		this.gplusprofile = gplusprofile;
 	}
 
 	public String getAddressLine1() {
-		return addressLine1;
+		return addressline1;
 	}
 
-	public void setAddressLine1(String addressLine1) {
-		this.addressLine1 = addressLine1;
+	public void setAddressLine1(String addressline1) {
+		this.addressline1 = addressline1;
 	}
 
 	public String getAddressLine2() {
-		return addressLine2;
+		return addressline2;
 	}
 
-	public void setAddressLine2(String addressLine2) {
-		this.addressLine2 = addressLine2;
+	public void setAddressLine2(String addressline2) {
+		this.addressline2 = addressline2;
 	}
 
 	public String getState() {
@@ -347,7 +411,47 @@ public class Spa {
 		this.country = country;
 	}
 
-	public ProfileCompletionStatus getProfileCompletionStatus() {
+	public Integer getNoOfVisitToEditProfilepage() {
+		return noofvisittoeditprofilepage;
+	}
+
+	public void setNoOfVisitToEditProfilepage(Integer noofvisittoeditprofilepage) {
+		this.noofvisittoeditprofilepage = noofvisittoeditprofilepage;
+	}
+
+	public Integer getNoOfUniqueProifleVistis() {
+		return noofuniqueprofilevisits;
+	}
+
+	public void setNoOfUniqueProifleVistis(Integer noofuniqueprofilevisits) {
+		this.noofuniqueprofilevisits = noofuniqueprofilevisits;
+	}
+
+    public float getLocationLat(){
+        return this.locationlat;
+    }
+
+    public void setLocationLat(float locationlat){
+        this.locationlat = locationlat;
+    }
+
+    public float getLocationLong(){
+        return this.locationlong;
+    }
+
+    public void setLocationLong(float locationlong){
+        this.locationlong = locationlong;
+    }
+	
+    public Integer getIsProfileComplete(){
+        return this.isprofilecomplete;
+    }
+
+    public void setIsProfileComplete(Integer isprofilecomplete){
+        this.isprofilecomplete = isprofilecomplete;
+    }
+
+    public ProfileCompletionStatus getProfileCompletionStatus() {
 		return profileCompletionStatus;
 	}
 
@@ -355,21 +459,5 @@ public class Spa {
 			ProfileCompletionStatus profileCompletionStatus) {
 		this.profileCompletionStatus = profileCompletionStatus;
 	}
-
-	public Integer getNoOfVisitToEditProfilepage() {
-		return noOfVisitToEditProfilepage;
-	}
-
-	public void setNoOfVisitToEditProfilepage(Integer noOfVisitToProfilepage) {
-		this.noOfVisitToEditProfilepage = noOfVisitToProfilepage;
-	}
-
-	public String getWebsiteURL() {
-		return websiteURL;
-	}
-
-	public void setWebsiteURL(String websiteURL) {
-		this.websiteURL = websiteURL;
-	}	
-	
+    
 }
