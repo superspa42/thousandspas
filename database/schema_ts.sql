@@ -43,7 +43,7 @@ CREATE TABLE spa (
   noofuniqueprofilevisits int,
   
   locationlat FLOAT(10,6),
-  locationlong FLOAT(10,6)
+  locationlong FLOAT(10,6),
   
   PRIMARY KEY (spaid)
 ) AUTO_INCREMENT=1120 
@@ -55,7 +55,7 @@ CREATE TABLE spa (
 -- images associated with them.
 ----------------------------------------------
 
-CREATE TABLE images{
+CREATE TABLE images(
   imageid int NOT NULL AUTO_INCREMENT,
   spaid int,
   
@@ -63,24 +63,8 @@ CREATE TABLE images{
   
   PRIMARY KEY (imageid),
   FOREIGN KEY (spaid) REFERENCES spa(spaid)
-}
+)
 
---------------------------------------------------
--- This N X N table stores spas and the services 
--- they provide. For e.g. 
--- spa1 - Foot Massage
--- spa1 - Head Massage
--- spa2 - Foot Massage
---------------------------------------------------
-CREATE TABLE spa_service{
-	spaserviceid int NOT NULL AUTO_INCREMENT,
-	spaid int,
-	serviceid int,
-	
-    PRIMARY KEY (spaserviceid),
-    FOREIGN KEY (spaid) REFERENCES spa(spaid),
-    FOREIGN KEY (serviceid) REFERENCES spa(serviceid),
-}
 
 ------------------------------------------------------
 -- Generic services provided by the spas and salons.
@@ -89,10 +73,31 @@ CREATE TABLE spa_service{
 -- N X N spas_services table
 ------------------------------------------------------
 
-CREATE TABLE service{
+CREATE TABLE service(
    serviceid int NOT NULL AUTO_INCREMENT,
-   servicename varchar(200)
-}
+   servicename varchar(200),
+   
+   PRIMARY KEY (serviceid)
+)
+
+
+
+--------------------------------------------------
+-- This N X N table stores spas and the services 
+-- they provide. For e.g. 
+-- spa1 - Foot Massage
+-- spa1 - Head Massage
+-- spa2 - Foot Massage
+--------------------------------------------------
+CREATE TABLE spa_service(
+	spaserviceid int NOT NULL AUTO_INCREMENT,
+	spaid int,
+	serviceid int,
+	
+    PRIMARY KEY (spaserviceid),
+    FOREIGN KEY (spaid) REFERENCES spa(spaid),
+    FOREIGN KEY (serviceid) REFERENCES service(serviceid)
+)
 
 
 ------------------------------------------------------
