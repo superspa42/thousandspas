@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>  
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:oxm="http://www.springframework.org/schema/oxm"
-	xmlns:jee="http://www.springframework.org/schema/jee"
-	xsi:schemaLocation="
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:oxm="http://www.springframework.org/schema/oxm"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="
         http://www.springframework.org/schema/beans 
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
         http://www.springframework.org/schema/context 
@@ -19,93 +19,111 @@
         http://www.springframework.org/schema/oxm
     	http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd
     	http://www.springframework.org/schema/jee
-    	http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">      
-      <!--Enables automatic mapping of objects to and from JSON -->  
-      <mvc:annotation-driven/>  
-      
-      <!--  
-            Setup spring to pull in @Controller, @RequestMapping, etc Configuration scans specified packages  
-            for classes configured as Spring managed beans and automatically sets up objects annotated with  
-            @Controller, @Service etc.  
-      -->  
-      
-      <context:component-scan base-package="in.thousandspas.controllers" />
-      
-      <bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
-  			<property name="location" value="classpath:in/thousandspas/properties/application.properties"/>
-	  </bean>   
-     
-      <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
-      
-      <!-- Base Service for ThousandSpas rest services -->
-      <bean id="baseService" class="in.thousandspas.service.BaseService" abstract="true">
-      		<property name="applicationProperties" ref="applicationProperties"></property>
-      </bean>
-      
-   	  <bean name="spaDao" class="in.thousandspas.dao.SpaDao">
-		<property name="sessionFactory" ref="ThousandSpasSessionFactory" />
-   	  </bean> 
-   	  
-   	  <bean id="editSpaService" class="in.thousandspas.service.spa.EditSpaService">
-   	        <property name="spaDao" ref="spaDao"/>
-   	  </bean>
-   	  
-   	  <bean name="trackingDao" class="in.thousandspas.dao.TrackingDao">
-        <property name="sessionFactory" ref="ThousandSpasSessionFactory" />
-      </bean> 
-      
-      <bean id="trackingService" class="in.thousandspas.service.tracking.TrackingService">
-            <property name="trackingDao" ref="trackingDao"/>
-      </bean>
-        
-      <!--Configures view for returning JSON to the client -->  
-  <!--     <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">  
-           <property name="contentType" value="text/plain"/>  
-      </bean>   -->
-      
-      <!--maps handler methods based on HTTP paths-->  
-  <!--     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">  
-           <property name="messageConverters">  
-                <util:list id="beanList">  
-                     <ref bean="jsonMessageConverter"/>  
-                </util:list>  
-           </property>  
-      </bean>
-        
-      Converts JSON to POJO and vice versa  
-      <bean id="jsonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>   -->
-	
-      <bean id="ThousandSpasSessionFactory"
-		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-		<property name="dataSource" ref="ThousandSpasDataSource" />
-		<property name="packagesToScan">
-			<list>
-				<value>in.thousandspas.domain</value>
-			</list>
-		</property>
-		<property name="hibernateProperties">
-			<value>
-				hibernate.format_sql=true
-				hibernate.show_sql=true
-				hibernate.jdbc.batch_size=25
-				
-				hibernate.dialect=org.hibernate.dialect.MySQLDialect
-			</value>
-		</property>
-	</bean>
-	
-	<bean id="ThousandSpasDataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/thousandspas" />
-		<property name="username" value="root" />
-		<property name="password" value="lranadive123" />
-	</bean>
-	
-	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-		<property name="sessionFactory" ref="ThousandSpasSessionFactory" />
-	</bean>
-	<tx:annotation-driven transaction-manager="transactionManager" />
-	
- </beans>  
+    	http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+    <!--Enables automatic mapping of objects to and from JSON -->
+    <mvc:annotation-driven/>
+
+    <!--
+          Setup spring to pull in @Controller, @RequestMapping, etc Configuration scans specified packages
+          for classes configured as Spring managed beans and automatically sets up objects annotated with
+          @Controller, @Service etc.
+    -->
+
+    <context:component-scan base-package="in.thousandspas.controllers"/>
+
+    <bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:in/thousandspas/properties/application.properties"/>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+
+    <!-- Base Service for ThousandSpas rest services -->
+    <bean id="baseService" class="in.thousandspas.service.BaseService" abstract="true">
+        <property name="applicationProperties" ref="applicationProperties"></property>
+    </bean>
+
+    <bean name="spaDao" class="in.thousandspas.dao.SpaDao">
+        <property name="sessionFactory" ref="ThousandSpasSessionFactory"/>
+    </bean>
+
+    <bean name="serviceDao" class="in.thousandspas.dao.ServiceDao">
+        <property name="sessionFactory" ref="ThousandSpasSessionFactory"/>
+    </bean>
+
+    <bean name="spaServiceDao" class="in.thousandspas.dao.SpaServiceDao">
+        <property name="sessionFactory" ref="ThousandSpasSessionFactory"/>
+    </bean>
+
+    <bean id="editSpaService" class="in.thousandspas.service.spa.EditSpaService">
+        <property name="spaDao" ref="spaDao"/>
+    </bean>
+
+    <bean id="servicesService" class="in.thousandspas.service.service.ServicesService">
+        <property name="serviceDao" ref="serviceDao"/>
+    </bean>
+
+    <bean id="spaServicesService" class="in.thousandspas.service.service.SpaServicesService">
+        <property name="spaDao" ref="spaDao"/>
+        <property name="serviceDao" ref="serviceDao"/>
+        <property name="spaServiceDao" ref="spaServiceDao"/>
+    </bean>
+
+    <bean name="trackingDao" class="in.thousandspas.dao.TrackingDao">
+        <property name="sessionFactory" ref="ThousandSpasSessionFactory"/>
+    </bean>
+
+    <bean id="trackingService" class="in.thousandspas.service.tracking.TrackingService">
+        <property name="trackingDao" ref="trackingDao"/>
+    </bean>
+
+    <!--Configures view for returning JSON to the client -->
+    <!--     <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+             <property name="contentType" value="text/plain"/>
+        </bean>   -->
+
+    <!--maps handler methods based on HTTP paths-->
+    <!--     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+             <property name="messageConverters">
+                  <util:list id="beanList">
+                       <ref bean="jsonMessageConverter"/>
+                  </util:list>
+             </property>
+        </bean>
+
+        Converts JSON to POJO and vice versa
+        <bean id="jsonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>   -->
+
+    <bean id="ThousandSpasSessionFactory"
+          class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="ThousandSpasDataSource"/>
+        <property name="packagesToScan">
+            <list>
+                <value>in.thousandspas.domain</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <value>
+                hibernate.format_sql=true
+                hibernate.show_sql=true
+                hibernate.jdbc.batch_size=25
+
+                hibernate.dialect=org.hibernate.dialect.MySQLDialect
+            </value>
+        </property>
+    </bean>
+
+    <bean id="ThousandSpasDataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/thousandspas"/>
+        <property name="username" value="root"/>
+        <property name="password" value="lranadive123"/>
+    </bean>
+
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="ThousandSpasSessionFactory"/>
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>

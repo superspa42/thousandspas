@@ -24,8 +24,7 @@ private SessionFactory sessionFactory;
 	public void update(Object obj) throws CommonException{
 		sessionFactory.getCurrentSession().update(obj);
 	}
-	public Object delete(Object obj) throws CommonException{
-		return null;
+	public void delete(Object obj) throws CommonException{
 	}	
 	
 	public Object readById(int id) throws CommonException{

@@ -2,6 +2,7 @@ package in.thousandspas.common;
 
 public class MessageCollection {
    public static final String INTERNAL_ERROR = "Internal error";
+   public static final String DATABASE_ERROR = "Sorry, Error occured while accessing the database";
    public static final String INTERNAL_ERROR_WHILE_ADDING_ACCOUNTANT = "Sorry. Your account could not be created due to an internal error.";
    
    public static final String ERROR_ENGINEERS_WILL_FIX_IT = "Our engineers will fix it really soon and we will get back to you shortly";
