@@ -4,13 +4,11 @@ var mbApp = angular
 .config(['$routeProvider', function($routeProvider) {
 	  $routeProvider
 
-.when('/basic_info', {templateUrl: '../ac/partials/editprofile_basicinfo.html', controller: PartialProfileViewController  })
-.when('/photo', {templateUrl: '../ac/partials/editprofile_photo.html', controller: PhotoController })
-.when('/description', {templateUrl: '../ac/partials/editprofile_description.html', controller: PartialProfileViewController  })
-.when('/social', {templateUrl: '../ac/partials/editprofile_social.html', controller: PartialProfileViewController  })
-.when('/exp', {templateUrl: '../ac/partials/editprofile_exp.html', controller:PartialProfileViewController})
-.when('/education', {templateUrl: '../ac/partials/editprofile_education.html'})
-.when('/address', {templateUrl: '../ac/partials/editprofile_address.html'})
+.when('/basic_info', {templateUrl: '../spa/partials/editprofile_basicinfo.html', controller: PartialProfileViewController  })
+.when('/photo', {templateUrl: '../spa/partials/editprofile_photo.html', controller: PhotoController })
+.when('/description', {templateUrl: '../spa/partials/editprofile_description.html', controller: PartialProfileViewController  })
+.when('/social', {templateUrl: '../spa/partials/editprofile_social.html', controller: PartialProfileViewController  })
+.when('/address', {templateUrl: '../spa/partials/editprofile_address.html'})
 	              .otherwise({redirectTo : '/basic_info'});
 
 	  //$locationProvider.html5Mode(true);
@@ -131,7 +129,7 @@ function SpaController($scope, $http, $location, $rootScope, $modal) {
         	$scope.accountant.areasOfExpertise = expertiseString;
 	        $http({
 	        	method: 'POST', 
-	        	url: '../api/accountant/saveProfile', 
+	        	url: '../api/spa/saveProfile', 
 	        	data: $.param($scope.accountant),
 	        	headers : { 'Content-Type': 'application/x-www-form-urlencoded'}}).
 	            success(function(data, status, headers, config) {
@@ -195,7 +193,7 @@ function SpaController($scope, $http, $location, $rootScope, $modal) {
 	  //If first time, show FTU dialog
 	  $scope.openFTUModalDialog = function ($modal) {
 		    var modalInstance = $modal.open({
-		      templateUrl: '../ac/modals/profilemodalftu.html',
+		      templateUrl: '../spa/modals/profilemodalftu.html',
 		      controller: ModalInstanceCtrl,
 		      resolve: {
 		      }
@@ -208,7 +206,7 @@ function SpaController($scope, $http, $location, $rootScope, $modal) {
 	 
 	  $scope.openDisplayContactModalDialog = function () {
 		    var modalInstance = $modal.open({
-		      templateUrl: '../ac/modals/displaycontactmodal.html',
+		      templateUrl: '../spa/modals/displaycontactmodal.html',
 		      controller: ModalInstanceCtrl,
 		      resolve: {
 		    	  accountant: function () {
@@ -224,7 +222,7 @@ function SpaController($scope, $http, $location, $rootScope, $modal) {
 	 
 	 $scope.openDisplaySampleProfileModal = function () {
 		    var modalInstance = $modal.open({
-			      templateUrl: '../ac/modals/displaysampleprofilemodal.html',
+			      templateUrl: '../spa/modals/displaysampleprofilemodal.html',
 			      controller: ModalInstanceCtrl,
 			      resolve: {
 			    	  accountant: function () {
@@ -246,7 +244,7 @@ function SpaController($scope, $http, $location, $rootScope, $modal) {
 	  
 	  //City list for typeahead
 	  $scope.cities = ['Delhi', 'Mumbai', 'Bangalore', 'Chennai', 'Hyderabad', 'Kolkata', 'Pune', 'Chandigarh', 'Ahmedabad', 'Amritsar', 'Bhubaneswar', 'Bhopal', 'Coimbatore', 'Ernakulum', 'Goa', 'Guntur', 'Haldwani', 'Indore', 'Jaipur', 'Jalandhar', 'Kakinada', 'Kanpur', 'Kota', 'Lucknow', 'Ludhiana', 'Mysore', 'Nagpur', 'Patiala', 'Patna', 'Rajamundry', 'Salem', 'Surat', 'Thiruvanthapuram', 'Tirrupur', 'Udaipur', 'Ujjain', 'Vadodara', 'Vijayawada', 'Vizag', 'Others'];
-	  $scope.states = ['Andaman and Nicobar Islands', 'Andhra Pradesh', 'Arunachal Pradesh', 'Assam','Telengana', 'Bihar', 'Chandigarh', 'Chhattisgarh', 'Delhi', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jammu and Kashmir', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Orissa', 'Puducherry', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal'];
+	  $scope.states = ['Andaman and Nicobar Islands', 'Andhra Pradesh', 'Arunachal Pradesh', 'Assam','Telengana', 'Bihar', 'Chandigarh', 'Chhattisgarh', 'Delhi', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jammu and Kashmir', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Orissa', 'Puducherry', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal'];
 	  
 	  //Sidebar
 	  //Create left nav of the edit profile
@@ -334,7 +332,7 @@ function SpaController($scope, $http, $location, $rootScope, $modal) {
 			}
 		});
 }
-AccountantController.$inject = ['$scope', '$http', '$location', '$rootScope', '$modal'];
+SpaController.$inject = ['$scope', '$http', '$location', '$rootScope', '$modal'];
 
 /**
  * PartialProfileViewController 

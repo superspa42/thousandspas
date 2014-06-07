@@ -1,0 +1,49 @@
+<div style="padding-left: 0px;padding-right: 0px;width: inherit;" class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <p style="padding-top: 20px;" class="editprofile-partial-header">Photo</p>
+            <p><span class="editprofile-brief-explanation h8">To create a modern and authentic community, we need the 
+            photograph of registered accountants.<br><br> Also, a quality photograph highly enhances your credibility. <br><br>
+            Make sure that the <span style="color: #000;">photo size is less than 100KB.</span></span></p>
+        </div>
+        <div class="col-md-8">
+            <form  id="upload1" style="padding-top: 15px;" role="form" method="post" action="../imgupload" enctype="multipart/form-data">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <div class="profile-header-photo">
+                        <img style="width: 170px;max-width: 110%;" id="photoImgSrc" src="{{accountant.photoFileName}}" class="{{accountant.actualImgDisplay}} img-thumbnail">
+                        <div id="dummyImg" class="{{accountant.dummyImgDisplay}}" style="background-color:#eee;height: 150px;width: 150px;border: 1px solid #CDCDCD;">
+                           <i style="margin-top:60px;margin-left:60px;font-size: 25px;color:#535252" class='center-block glyphicon glyphicon-camera' ></i>
+                        </div>          
+                    </div>
+
+                  </div>
+                 </div> 
+                 
+                  <div class="row">
+                    <div class="col-xs-5 form-group"> 
+                       <!-- <a href="#" class="btn-default btn-block btn"><i class="glyphicon glyphicon-picture"></i>&nbsp;&nbsp;                   
+                       Add Photo</a> -->
+                       
+                      <!--<button id="file-input-button" class="btn-default btn-block btn fileinput-button">
+                         <i class="glyphicon glyphicon-picture"></i>&nbsp;&nbsp;        
+                             <span>Add Photo</span>
+                         <input id="fileupload" type="file" name="uploadctl">
+                      </button> -->                      
+                      
+                      <a id="file-input-button" class="btn-default btn-block btn fileinput-button">
+                         <i class="glyphicon glyphicon-picture"></i>&nbsp;&nbsp;        
+                             <span>Add Photo</span>
+                         <input id="fileupload" type="file" name="uploadctl">
+                      </a>
+                    </div>
+                 </div>
+                 
+                 <table role="presentation" class="table table-striped"><tbody class="files" data-toggle="modal-gallery" data-target="#modal-gallery"></tbody></table>                 
+                  
+              </form>
+
+     
+        </div>
+    </div>
+</div>    

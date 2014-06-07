@@ -1,0 +1,70 @@
+<div style="padding-left: 0px;padding-right: 0px;width: inherit;" class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <p style="padding-top: 20px;" class="editprofile-partial-header">Social Profile</p>
+            <p><span class="editprofile-brief-explanation h8">Social media profile is not mandatory. But its a great way to build trust among potential customers.</span></p>
+        </div>
+        <div class="col-md-8">
+            
+            <form style="padding-top: 15px;" role="form">
+              <div class="row">                  
+                  <div class="col-xs-9 form-group">
+                    <input popover-title="Your website URL" popover-placement="right" popover-append-to-body='true' popover="Fill this if you have a website." popover-trigger="mouseenter" type="text" class="form-control" placeholder="Your website URL" ng-model="accountant.websiteURL">
+                  </div>
+                  <div class="col-xs-1 form-group">
+                    <i style="font-size: 25px;color:#535252"  class="glyphicon glyphicon-globe"></i>&nbsp;                    
+                  </div>  
+                </div>
+                
+                <div class="row">                  
+                  <div class="col-xs-9 form-group">
+                    <input popover-placement="right" popover-append-to-body='true' popover="Enter your LinkedIn profile URL" popover-trigger="mouseenter" type="text" class="form-control" placeholder="LinkedIn Profile" ng-model="accountant.linkedinProfile">
+                  </div>
+                  <div class="col-xs-1 form-group">
+                    <span style="font-size: 25px;color:#535252"  class="icon-linkedin"></span>&nbsp;                    
+                  </div>  
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-9 form-group">
+                    <input popover-placement="right" popover-append-to-body='true' popover="Enter your facebook profile URL" popover-trigger="mouseenter" type="text" class="form-control" placeholder="Facebook Profile" ng-model="accountant.fbProfile">
+                  </div>                  
+                  <div class="col-xs-1 form-group">
+                    <span style="font-size: 25px;color:#535252"  class="icon-facebook"></span>&nbsp;                    
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-9 form-group">
+                    <input type="text" class="form-control" placeholder="Google+ Profile" ng-model="accountant.gplusProfile">
+                  </div>                  
+                  <div class="col-xs-1 form-group">
+                    <span style="font-size: 25px;color:#535252"  class="icon-google-plus"></span>&nbsp;                    
+                  </div>
+                </div>   
+                           
+                 <div class="row">
+                    <div class="col-xs-5 form-group">                    
+                       <a ng-click="saveFormDataAndNextView('/exp')" href="" class="btn-default btn-block btn">
+                          <i class="glyphicon glyphicon-ok"></i>&nbsp;&nbsp;
+                          Save &amp; Next
+                       </a>
+                    </div>
+                    <div class="col-xs-4 form-group">                    
+                       <a ng-click="saveFormData()" href="" class="btn-secondary btn-block btn">Save</a>                     
+                    </div>
+                 </div> 
+                 
+                 <div class="row">
+                    <div id="successMessageDiv" style="display:{{successMessageDivVisibility}};" class="alert alert-success col-xs-9">
+                         {{successMessageDivSuccessMessage}}
+                    </div>
+                    <div id="errorMessageDiv" style="display:{{errorMessageDivVisibility}};" class="alert alert-danger col-xs-9">
+                         {{errorMessageDivSuccessMessage}}
+                    </div> 
+                 </div>                 
+                 
+            </form>
+        </div>
+    </div> 
+</div>

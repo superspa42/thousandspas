@@ -1,0 +1,65 @@
+<div style="padding-left: 0px;padding-right: 0px;width: inherit;" class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <p style="padding-top: 20px;" class="editprofile-partial-header">Address</p>
+            <p><span class="editprofile-brief-explanation h8">Please provide your accurate address and pin code.<br><br>
+            That will help us <span style="color:#000">point your place correctly in google maps.</span>
+           </span></p>
+        </div>
+        <div class="col-md-8">
+            
+            <form style="padding-top: 15px;" role="form">
+                <div class="row">                  
+                  <div class="col-xs-9 form-group">
+                    <input type="text" class="form-control" placeholder="Address Line1" ng-model="accountant.addressLine1">
+                  </div>
+                </div>
+                
+                <div class="row">                  
+                  <div class="col-xs-9 form-group">
+                    <input type="text" class="form-control" placeholder="Address Line2" ng-model="accountant.addressLine2">
+                  </div>
+                </div>  
+                
+                <div class="row">                  
+                  <div class="col-xs-9 form-group">
+                    <input type="text" class="form-control" placeholder="City" ng-model="accountant.city">
+                  </div>
+                </div>
+                
+                <div class="row">                  
+                  <div class="col-xs-9 form-group">
+                    <input popover-placement="right" popover-append-to-body='true' popover="Start typing to see suggestions." popover-trigger="mouseenter" type="text" class="form-control" placeholder="State" ng-model="accountant.state" typeahead="state for state in states | filter:$viewValue | limitTo:8">
+                  </div>
+                </div> 
+                
+                <div class="row">                  
+                  <div class="col-xs-9 form-group">
+                    <input type="text" class="form-control" placeholder="Pincode" ng-model="accountant.pincode">
+                  </div>
+                </div>                 
+                 
+                <div class="row">
+                    <div class="col-xs-1 form-group">  
+                    </div>
+                    <div class="col-xs-6 form-group">                    
+                       <a ng-click="saveFormData()" href="" class="btn-default btn-block btn">
+                          <i class="glyphicon glyphicon-ok"></i>&nbsp;&nbsp;
+                          Save Profile
+                       </a>
+                    </div>
+                 </div> 
+                 
+                 <div class="row">
+                    <div id="successMessageDiv" style="display:{{successMessageDivVisibility}};" class="alert alert-success col-xs-9">
+                         {{successMessageDivSuccessMessage}}
+                    </div>
+                    <div id="errorMessageDiv" style="display:{{errorMessageDivVisibility}};" class="alert alert-danger col-xs-9">
+                         {{errorMessageDivSuccessMessage}}
+                    </div> 
+                 </div>    
+                 
+            </form>
+        </div>
+    </div> 
+</div>

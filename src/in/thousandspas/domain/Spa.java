@@ -2,6 +2,9 @@ package in.thousandspas.domain;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import org.apache.jasper.tagplugins.jstl.core.Set;
+
 import java.sql.Date;
 
 
@@ -160,6 +163,10 @@ public class Spa {
     private ProfileCompletionStatus profileCompletionStatus;
 
 
+    @OneToMany(mappedBy="imageid")
+    private java.util.Set<Images> images;
+    
+    
     public Integer getSpaid() {
         return spaid;
     }
