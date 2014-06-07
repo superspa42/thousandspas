@@ -53,13 +53,18 @@ public class SpaController {
     @RequestMapping(value="/saveProfile", method = RequestMethod.POST)
     @ResponseBody
     public AppResponse<ProfileCompletionStatus> saveSpaProfile(HttpServletRequest req){
+    	/* lranadive : testing 
        	if(!CollectionOfUtilityMethods.isReqInSession(req)){
     		return new AppResponse<ProfileCompletionStatus>(EventStatus.nosession.getValue(), null, MessageCollection.NEED_TO_LOGIN_TO_ACCESS_THIS_FEATURE);
     	}
     	int id = CollectionOfUtilityMethods.parseToNumber(req.getParameter("spaid"));
-    	String firstName = req.getParameter("firstName");
+    	*/
+    	int id = 1120;
+    	String firstName = req.getParameter("spaname");
     	String lastName = req.getParameter("lastName");
-		String email = req.getParameter("email");
+		//String email = req.getParameter("primaryemail");
+		/*lranadive testing*/
+		String email = "lranadive@outlook.com";
 		String mobile = req.getParameter("mobile");
 		String businessPhone = req.getParameter("businessPhone");
         String city = req.getParameter("city");
