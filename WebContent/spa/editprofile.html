@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="AccountantProfileSection">
+<html ng-app="SpaProfileSection">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,15 +17,15 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'> -->
     
     
-    <title> Create free profile for accountants - AccountantConnect </title>
+    <title> Create free profile for spa - ThousanSpas </title>
 
     <!-- Bootstrap core CSS -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link href="../css/b-main.css" rel="stylesheet">
     <link href="../css/signin.css" rel="stylesheet">
-    <link href="../css/ac-icon-font.css" rel="stylesheet">
-    <link href="../css/ac-profile.css" rel="stylesheet">
+    <link href="../css/spa-icon-font.css" rel="stylesheet">
+    <link href="../css/spa-profile.css" rel="stylesheet">
     <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
     <link rel="stylesheet" href="../css/jquery.fileupload-ui.css">
  
@@ -48,9 +48,9 @@
     <!-- <script src="../js/ui-bootstrap-tpls-0.5.0.min.js"></script>  -->
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js"></script>
-    <script src="../js/AccountantProfileSection.js"></script>
+    <script src="../js/SpaProfileSection.js"></script>
     <script src="../js/ac-util.js"></script>
-    <script src="../js/ac-signup.js"></script>
+    <script src="../js/spa-signup.js"></script>
     
     
         <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
@@ -83,11 +83,11 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-48262166-1', 'accountantconnect.in');
+  ga('create', 'UA-48262166-1', 'thousanspas.in');
   ga('send', 'pageview');
 </script>
 </head>
-<body class="body" ng-controller="AccountantController">
+<body class="body" ng-controller="SpaController">
       <div class="navbar-inverse" role="navigation">
       <div class="container">
         <div>
@@ -99,20 +99,18 @@
             <span class="icon-bar"></span>
           </button>
           <br>
-          <a onclick="trackUserActivity('clickLogo_acFaqPageLogo_acfaqhtml')" class="brand " href="acmain.html">
-            <img src="../img/small_branding_white_bg.png" alt="AccountantConnect">
+          <a onclick="trackUserActivity('clickLogo_acFaqPageLogo_acfaqhtml')" class="brand " href="../customers/landing.html">
+            <img src="../img/branding_normal.png" alt="ThousandSpas">
           </a>
         </div>
-        <div class="navbar-collapse collapse" ng-controller="SignUpController">
+        <div class="navbar-collapse collapse" ng-controller="SignUpControllerSpa">
             <ul class="nav navbar-nav navbar-right"> 
-               <li class="hidden">
-                  <a href="acfeedback.html" class="navbar-links">Feedback</a>  
-               </li>            
                <li>
-                 <a href="#" class="navbar-links" onclick="$('#accountchooser-tooltip').show();trackUserActivity('clickLink_contactUs_acfaqhtml')"> Contact Us</a>                 
+                 <a href="#" class="navbar-links" onclick="$('#spachooser-tooltip').show();trackUserActivity('clickLink_contactUs_acfaqhtml')"> Contact Us</a>                 
                   
-                 <div id="accountchooser-tooltip" class="jfk-tooltip accountchooser-tooltip" style="display:none;" onblur="$('#accountchooser-tooltip').hide()">
-                 <div onclick="$('#accountchooser-tooltip').hide();" class="pull-right"><a href="#">X</a></div>
+                 <div id="spachooser-tooltip" class="jfk-tooltip spachooser-tooltip" style="display:none;"
+                     onblur="$('#spachooser-tooltip').hide()">
+                 <div onclick="$('#spachooser-tooltip').hide();" class="pull-right"><a href="#">X</a></div>
                  <div id="content" class="jfk-tooltip-content">  
                      <i class='glyphicon glyphicon-envelope' ></i> <span>contact@accountantconnect.in</span><br>
                      <i class='glyphicon glyphicon-earphone'></i> <span>+91 80 3076 7297</span>
@@ -121,7 +119,8 @@
                </li>   
                <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		              <i style="font-size: 16px;" class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;{{accountant.firstName}}<b class="caret"></b>
+		              <i style="font-size: 16px;" class="glyphicon
+                          glyphicon-user"></i>&nbsp;&nbsp;{{spa.spaname}}<b class="caret"></b>
 		          </a>
 		          <ul class="dropdown-menu">		          
                     <li>
@@ -190,16 +189,15 @@
               <div>
                 <ul class="nav nav-pills nav-stacked">  
                   <br>
-                  <li class="nav-header">Introduction</li>
+                  <!-- <li class="nav-header">Introduction</li> -->
                   <li ng-repeat="editProfileLeftNav_intro in editProfileLeftNavs_intro" class="{{editProfileLeftNav_intro.class}}" ng-click="editProfileLeftNavs_introClicked($event, $index)">
                     <a href="#{{editProfileLeftNav_intro.link}}">
                         <i class='glyphicon {{editProfileLeftNav_intro.glyphicon}}' ></i>&nbsp;&nbsp;&nbsp;&nbsp;{{editProfileLeftNav_intro.LinkText}}
                         &nbsp;&nbsp;&nbsp;&nbsp;<i class='profile-page-icon-{{editProfileLeftNav_intro.itemIconColor}} pull-right glyphicon {{editProfileLeftNav_intro.IsItemFilled}}' ></i>
                     </a>
                   </li>
-                  <br><br>
 
-                  <li class="nav-header">Professional Information</li>
+                  <!-- <li class="nav-header">Professional Information</li> -->
                   
                   <li ng-repeat="editProfileLeftNav_prof in editProfileLeftNavs_prof" class="{{editProfileLeftNav_prof.class}}" ng-click="editProfileLeftNavs_profClicked($event, $index)">
                     <a href="#{{editProfileLeftNav_prof.link}}">
